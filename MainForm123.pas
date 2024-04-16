@@ -19,8 +19,4 @@ type
   private
     { Private declarations }
 
-
-
-
-
-
+  end;
