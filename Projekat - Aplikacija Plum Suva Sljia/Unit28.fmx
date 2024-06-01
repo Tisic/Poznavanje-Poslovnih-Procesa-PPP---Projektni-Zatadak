@@ -1,0 +1,68 @@
+object Form28: TForm28
+  Left = 320
+  Top = 106
+  Caption = 'Form28'
+  ClientHeight = 480
+  ClientWidth = 640
+  Position = Designed
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  Left = 320
+  Top = 106
+  DesignerMasterStyle = 0
+  object StringGrid1: TStringGrid
+    CanFocus = True
+    ClipChildren = True
+    Position.X = 80.000000000000000000
+    Position.Y = 120.000000000000000000
+    Size.Width = 425.000000000000000000
+    Size.Height = 265.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    RowCount = 3
+    Viewport.Width = 425.000000000000000000
+    Viewport.Height = 265.000000000000000000
+  end
+  object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\dimit\OneD' +
+      'rive\Desktop\PLUM123.mdb;Persist Security Info=False'
+    Mode = cmShareDenyNone
+    Provider = 'Microsoft.Jet.OLEDB.4.0'
+    Left = 528
+    Top = 64
+  end
+  object ADOTable1: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'Artikli'
+    Left = 352
+    Top = 32
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOTable1
+    Left = 440
+    Top = 56
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = ADOTable1
+    ScopeMappings = <>
+    Left = 120
+    Top = 16
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 36
+    Top = 13
+    object LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      GridControl = StringGrid1
+      Columns = <>
+    end
+  end
+end
